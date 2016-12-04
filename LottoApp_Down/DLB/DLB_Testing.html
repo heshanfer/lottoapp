@@ -1,0 +1,83 @@
+<!DOCTYPE html >
+
+
+<html >
+	<head>		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   </head>
+   
+<body >
+
+	<script>
+		function testResults (form) {
+
+			var TestVar = form.ename.value;
+			var dn = form.dn.value;
+
+			if ((dn==null || dn=="") && (TestVar==null || TestVar==""))
+			{
+				alert("Please fill either date or draw number for search ");
+				return false;
+			}
+
+			if ( isNaN( dn ) )
+			{
+				alert( "Invalied charactor in Draw number Field" );
+				return false;
+			}
+
+			if(TestVar==null || TestVar=="")
+			{
+
+			}
+
+			else {
+				myDateParts = TestVar.split("/");  
+				y = myDateParts[2];
+				m = myDateParts[0];
+				d = myDateParts[1];
+
+
+
+				if(m>2000)
+				{ 
+					
+				}
+				else
+				{
+					var result=(y+"/"+m+"/"+d);
+					form.ename.value =result;
+				}
+			}
+
+		}
+			
+		//jQuery.noConflict()(function() {
+			//jQuery( "#datepicker" ).datepicker();
+		//});
+
+	</script>
+
+
+	<form method="post" name="form1" action="http://dlb.today/dlb/index.php?option=com_jumi&amp;fileid=31&amp;Itemid=31">
+		<h1>Search Results</h1><br>
+		<select name="db">
+			  <option value="df">Lagna Wasana</option>
+			  <option value="sf">Saturday Fortune</option>
+			  <option value="j">Jayoda</option>
+			  <option value="jj">Galaxy Star</option>
+			  <option value="nj">Niyatha Jaya</option>
+			  <option value="sb">Super Ball</option>
+			  <option value="l">Sanwardana Lakshapathi</option>
+			  <option value="ks">Kotipathi Shanida</option>
+		</select>
+		<!--Draw Number--> <input type="text" name="dn" value="" size="4" maxlength="4" hidden> 
+
+		Date: <input type="text" id="datepicker" name="ename" size="8" maxlength="10">
+
+		<input type="submit" value="Search" onclick=" return testResults(this.form)">
+
+	</form>
+<br>
+
+</html>

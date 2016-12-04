@@ -1,0 +1,342 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#626262;
+	text align:left;
+	line-height:16px;
+	text-decoration:none;
+}
+.bodyText{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#626262;
+	text-align:left;
+	line-height:16px;
+	text-decoration:none;
+	
+}
+.bodyText2{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#626262;
+	text-align: center;
+	line-height:16px;
+	text-decoration:none;
+	
+}
+.bodyTextSinhala{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#626262;
+	text-align:left;
+	line-height:16px;
+	text-decoration:none;
+	font-weight:bold;
+	
+}
+.bodyText-black{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+	text align:left;
+	line-height:16px;
+	text-decoration:none;
+}
+.title{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+	color:#0c4e73;
+	text align:left;
+	text-decoration:none;
+}
+.title2{
+	font-family:Arial Narrow, Helvetica, sans-serif;
+	font-size:20px;
+	color:#0c4e73;
+	text align:left;
+	line-height:24px;
+	text-decoration:none;
+}
+.innerTitle{
+	font-family:Arial Narrow, Helvetica, sans-serif;
+	font-size:24px;
+	color:#0c4e73;
+	text align:left;
+	line-height:24px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.subTitle{
+	font-family:Arial Narrow, Helvetica, sans-serif;
+	font-size:20px;
+	color:#000000;
+	line-height:24px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.more-link{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+	text align:left;
+	line-height:16px;
+	text-decoration:none;
+}
+.lottery-numbers{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#000;
+	text-align:center;
+	text-decoration:none;
+}
+.lottery-names{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:15px;
+	color:#0c4e73;
+	font-weight:bold;
+	text-align:left;
+	text-decoration:none;
+	padding-bottom:10px;
+	padding-left:5px;
+}
+
+.lottery-names_tm{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#0c4e73;
+	font-weight:bold;
+	text-align:left;
+	text-decoration:none;
+	padding-bottom:10px;
+	padding-left:5px;
+}
+
+.footerText{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#626262;
+	text align:left;
+	line-height:16px;
+	text-decoration:none;
+}
+.footerlink{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#0c4e73;
+	text align:left;
+	line-height:16px;
+	text-decoration:none;
+}
+
+/* 
+	MENU
+*/
+
+ul#menu {
+	margin:0px; 
+	padding:0px;
+	position:absolute;
+	background:url(images/menu-bg.png) no-repeat top;
+	height:58px;
+}
+ul#menu li {
+	display:inline;
+	margin-left:15px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	vertical-align:top;
+	text-align:center;
+	font-size:13px;
+	color:#0c4e73;
+}
+ul#menu li a {
+	text-decoration:none;
+	color:#000000;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+ul#menu li a.active, ul#menu li a:hover {
+	color:#0c4e73;
+}
+
+.lottery-pink{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:24px;
+	color:#CC3A6F;
+	text-align:center;
+	text-decoration:none;
+}
+.lottery-blue{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:24px;
+	color:#0085d0;
+	text-align:center;
+	text-decoration:none;
+}
+.lottery-black{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:24px;
+	color:#000;
+	text-align:center;
+	text-decoration:none;
+}
+.lottery-red{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:24px;
+	color:#900;
+	text-align:center;
+	text-decoration:none;
+}
+
+.lottery-vo{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:24px;
+	color:#990099;
+	text-align:center;
+	text-decoration:none;
+}
+.menu_new {
+	text-decoration:none;
+	color:#ffffff;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.menumenu_new:hover {
+	color:#0c4e73;
+}
+
+.menu {
+	text-decoration:none;
+	color:#ffffff;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.menu:hover {
+	color:#0c4e73;
+}
+
+.bordertop{
+	border-top:dotted thin #CCC;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#626262;
+	
+}
+.bordertop2{
+	border-top:solid thin #CCC;
+	border-bottom:solid thin #CCC;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#626262;
+	
+}
+
+.error {
+	float: none; 
+	color: red; 
+	padding-left: .5em; 
+	vertical-align: top; 
+}
+
+.menu_new5{
+	width:100%;
+	position:relative;
+	background:url(images/menu_new.png);
+	border:1px solid #97b3e2;
+	border-radius:0 0 10px 10px;
+	height:40px;
+	padding:0 5px 0 5px;
+	
+	
+}
+.menu_new2{
+	position:relative;
+	text-align:center;
+	float:left;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:10px;
+	
+	
+}
+
+.menu_new4{
+	width: auto;
+	position:relative;
+	text-align:center;
+	float:right;
+}
+
+#design_conterner{
+	width:100%;
+	position: relative;
+	float:left;
+}
+	
+.design_logo{
+	width:397px;
+	position: absolute;
+	float:left;
+	z-index:1;
+	margin-top:20px;
+}
+
+.design_menu{
+	width: auto;
+	position: relative;
+	z-index:2;
+	float: right;
+}
+
+#latest_design_conterner{
+	width:1000px;
+	margin:auto;
+	position:relative;
+	border:1px solid #97b3e2;
+	border-radius:10px 10px 10px 10px;
+	height:auto;
+	padding:15px;
+	overflow: auto;
+	background:url(images/latest_design_back.jpg) bottom repeat-x #FFF;
+	
+}
+
+#winning_price{
+	width:480px;
+	margin:auto;
+	position:relative;
+	border:1px solid #97b3e2;
+	border-radius:4px;
+	overflow: auto;
+	
+	padding:15px;
+	background:url(images/latest_design_back.jpg) bottom repeat-x #FFF;
+	
+}
+
+#latest_design_contact{
+	width:500px;
+	margin:auto;
+	position:relative;
+	border:1px solid #97b3e2;
+	border-radius:10px 10px 10px 10px;
+	height:auto;
+	padding:15px;
+	overflow: auto;
+	background:url(images/latest_design_back.jpg) bottom repeat-x #FFF;
+	
+}
