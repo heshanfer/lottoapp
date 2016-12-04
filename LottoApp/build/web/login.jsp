@@ -21,12 +21,10 @@
              boolean result = UserController.checkPassword(userName, pwd);
              if(result){
                  System.out.println("Valid");
+                 response.sendRedirect("dashboard.jsp");
              }else{
                  System.out.println("Invalid");   
              }
-
-             
-             
         %>
         
 
