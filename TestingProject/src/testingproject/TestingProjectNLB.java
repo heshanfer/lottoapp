@@ -20,6 +20,7 @@ import java.util.regex.Pattern;
 
 public class TestingProjectNLB {
     public static List<String> getNLBResults(String lotteryId,String date) throws IOException{
+        boolean st = false;
         List<String> results = new ArrayList<String>();
         
         URL oracle = new URL("http://www.nlb.lk/show-results.php?lott="+lotteryId+"&date="+date); // 16-11-21
@@ -45,18 +46,22 @@ public class TestingProjectNLB {
                     Pattern pattern3 = Pattern.compile(patternString3);
                     Matcher matcher3 = pattern3.matcher(inputLine);
                     if(matcher3.find()){
-                        String data = inputLine.replaceAll("\\s","");
+                        //String data = inputLine.replaceAll("\\s","");
+                        String data =inputLine.trim();
                         String no = data.split("<")[0];
                         //System.out.println(no);
                         results.add(no);
                         //break;
+                        st = true;
                     }
                 }
-                
+                if(st){
+                    return results;
+                }
             }
         }
         in.close();
-        return results;
+        return null;
     }
     
     public static void main(String[] args)  {
@@ -97,7 +102,7 @@ public class TestingProjectNLB {
         
         List<String> results;
         try {
-            results = getNLBResults("49", "16-11-21");
+            results = getNLBResults("42", "16-12-09");
             
             for(String res : results){
                 System.out.println(res);

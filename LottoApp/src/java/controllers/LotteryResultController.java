@@ -25,8 +25,8 @@ public class LotteryResultController {
         try{
             connection=DBConnection.getConnectionToDB();
             connection.setAutoCommit(false);
-            String quary ="INSERT INTO lot_results_history VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            Object []data={lotteryResult.getHistoryId(),lotteryResult.getLotteryId(),lotteryResult.getDrawNo(),lotteryResult.getNo1(),lotteryResult.getNo2(),lotteryResult.getNo3(),lotteryResult.getNo4(),lotteryResult.getNo5(),lotteryResult.getNo6(),lotteryResult.getBonusNo(),lotteryResult.getBonusLetter(),lotteryResult.getBonusFactor1(),lotteryResult.getBonusFactor2()};
+            String quary ="INSERT INTO lot_results_history(LOT_ID,DRAW_NO,DATE,NO1,NO2,NO3,NO4,NO5,NO6,BONUS_FACTOR1,BONUS_FACTOR2,BONUS_FACTOR3) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+            Object []data={lotteryResult.getLotteryId(),lotteryResult.getDrawNo(),lotteryResult.getDate(),lotteryResult.getNo1(),lotteryResult.getNo2(),lotteryResult.getNo3(),lotteryResult.getNo4(),lotteryResult.getNo5(),lotteryResult.getNo6(),lotteryResult.getBonusFactor1(),lotteryResult.getBonusFactor2(),lotteryResult.getBonusFactor3()};
             
             Boolean res=  DBHandle.setData(DBConnection.getConnectionToDB(), quary, data);
 
@@ -53,9 +53,36 @@ public class LotteryResultController {
         ResultSet resultSet = DBHandle.getData(DBConnection.getConnectionToDB(), query, data);
         List<LotteryResult> resultList = new ArrayList<LotteryResult>();
         while (resultSet.next()) {
-            LotteryResult lotteryResult = new LotteryResult(resultSet.getInt("1"), resultSet.getInt("2"), resultSet.getInt("3"), resultSet.getString("4"),resultSet.getInt("5"),resultSet.getInt("6"), resultSet.getInt("7"), resultSet.getInt("8"),resultSet.getInt("9"),resultSet.getInt("10"), resultSet.getInt("11"), resultSet.getString("12"), resultSet.getString("13"), resultSet.getString("14"));
+            LotteryResult lotteryResult = new LotteryResult(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3), resultSet.getString(4),resultSet.getString(5),resultSet.getString(6), resultSet.getString(7), resultSet.getString(8),resultSet.getString(9),resultSet.getString(10), resultSet.getString(11), resultSet.getString(12), resultSet.getString(13));
             resultList.add(lotteryResult);
         }
         return resultList;
     }
+    
+    //SELECT l.AUTH_CODE,l.LOT_ID,l.AUTHORITY FROM lottery l , lottery_date ld WHERE l.LOT_ID = ld.LOT_ID AND ld.DAY=5 GROUP BY l.LOT_ID;
+    public static List<String[]> getLotteries(String dayNo) throws SQLException, ClassNotFoundException {
+        String query = "SELECT l.AUTH_CODE,l.LOT_ID,l.AUTHORITY,l.NAME FROM lottery l , lottery_date ld WHERE l.LOT_ID = ld.LOT_ID AND ld.DAY=? GROUP BY l.LOT_ID;";
+        Object[] data = new Object[]{dayNo};
+        ResultSet resultSet = DBHandle.getData(DBConnection.getConnectionToDB(), query, data);
+        
+        List<String[]> resultList = new ArrayList<String[]>();
+        while (resultSet.next()) {
+            String[] lottery = {resultSet.getString(1),resultSet.getString(2),resultSet.getString(3),resultSet.getString(4)};  
+            resultList.add(lottery);
+        }
+        return resultList;
+    }
+    
+    
+    public static int getLastDrawNo(String lotId) throws SQLException, ClassNotFoundException {
+        String query = "SELECT DRAW_NO FROM lot_results_history WHERE LOT_ID=? ORDER BY DRAW_NO DESC";
+        Object[] data = new Object[]{lotId};
+        ResultSet resultSet = DBHandle.getData(DBConnection.getConnectionToDB(), query, data);
+
+        if (resultSet.next()) {
+            return resultSet.getInt(1);
+        }
+        return -1;
+    }
+    
 }

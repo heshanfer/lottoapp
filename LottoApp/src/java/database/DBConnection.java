@@ -20,7 +20,8 @@ public class DBConnection {
 
     private DBConnection() throws ClassNotFoundException, SQLException{
         Class.forName("com.mysql.jdbc.Driver");
-        connection =DriverManager.getConnection("jdbc:mysql://localhost:3306/lottoappdb","root","12345");
+       // connection =DriverManager.getConnection("jdbc:mysql://sv2.ideamarthosting.dialog.lk:3306/heshanf_db","heshanf","H3sh@Nf");
+        connection =DriverManager.getConnection("jdbc:mysql://localhost:3306/heshanf_db","heshanf","H3sh@Nf");
 
     }
 

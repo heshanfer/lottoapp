@@ -4,7 +4,10 @@
     Author     : Heshan
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="controllers.UserController"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +16,8 @@
         <title>Lotto App</title>
     </head>
     <body>
-        
+
+
         <% 
             String userName = request.getParameter("uname");    
             String pwd = request.getParameter("pass");
@@ -25,6 +29,8 @@
              }else{
                  System.out.println("Invalid");   
              }
+             
+             
         %>
         
 

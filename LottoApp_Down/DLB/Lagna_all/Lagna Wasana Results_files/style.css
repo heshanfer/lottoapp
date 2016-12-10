@@ -1,0 +1,22 @@
+.jsnis-container {
+  outline: none;
+  text-align: center;
+} 
+
+.jsnis-gallery{
+	outline: none;
+}
+
+.jsnis-alternative{
+	display: none;
+}
+.no-flash{
+	display:block;
+}
+.no-swfobj-flash
+{
+	display:none;
+}
+.jsnis-hd{
+	display:none;
+}

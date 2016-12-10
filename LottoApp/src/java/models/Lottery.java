@@ -14,12 +14,23 @@ public class Lottery {
     private String name;
     private String authority;
     private int validNos;
-    private boolean hasBonusNo;
-    private boolean hasBonusChar;
-    private boolean hasBonusSymbol;
-    private boolean hasBonusFactor;
-    private int authNo1;
+    private boolean hasBonusFactor1;
+    private boolean hasBonusFactor2;
+    private boolean hasBonusFactor3;
+    private String authCode;
     private String url;
+
+    public Lottery(int lotteryId, String name, String authority, int validNos, boolean hasBonusFactor1, boolean hasBonusFactor2, boolean hasBonusFactor3, String authCode, String url) {
+        this.lotteryId = lotteryId;
+        this.name = name;
+        this.authority = authority;
+        this.validNos = validNos;
+        this.hasBonusFactor1 = hasBonusFactor1;
+        this.hasBonusFactor2 = hasBonusFactor2;
+        this.hasBonusFactor3 = hasBonusFactor3;
+        this.authCode = authCode;
+        this.url = url;
+    }
 
     /**
      * @return the lotteryId
@@ -78,73 +89,59 @@ public class Lottery {
     }
 
     /**
-     * @return the hasBonusNo
+     * @return the hasBonusFactor1
      */
-    public boolean isHasBonusNo() {
-        return hasBonusNo;
+    public boolean hasBonusFactor1() {
+        return hasBonusFactor1;
     }
 
     /**
-     * @param hasBonusNo the hasBonusNo to set
+     * @param hasBonusFactor1 the hasBonusFactor1 to set
      */
-    public void setHasBonusNo(boolean hasBonusNo) {
-        this.hasBonusNo = hasBonusNo;
+    public void setHasBonusFactor1(boolean hasBonusFactor1) {
+        this.hasBonusFactor1 = hasBonusFactor1;
     }
 
     /**
-     * @return the hasBonusChar
+     * @return the hasBonusFactor2
      */
-    public boolean isHasBonusChar() {
-        return hasBonusChar;
+    public boolean hasBonusFactor2() {
+        return hasBonusFactor2;
     }
 
     /**
-     * @param hasBonusChar the hasBonusChar to set
+     * @param hasBonusFactor2 the hasBonusFactor2 to set
      */
-    public void setHasBonusChar(boolean hasBonusChar) {
-        this.hasBonusChar = hasBonusChar;
+    public void setHasBonusFactor2(boolean hasBonusFactor2) {
+        this.hasBonusFactor2 = hasBonusFactor2;
     }
 
     /**
-     * @return the hasBonusSymbol
+     * @return the hasBonusFactor3
      */
-    public boolean isHasBonusSymbol() {
-        return hasBonusSymbol;
+    public boolean hasBonusFactor3() {
+        return hasBonusFactor3;
     }
 
     /**
-     * @param hasBonusSymbol the hasBonusSymbol to set
+     * @param hasBonusFactor3 the hasBonusFactor3 to set
      */
-    public void setHasBonusSymbol(boolean hasBonusSymbol) {
-        this.hasBonusSymbol = hasBonusSymbol;
+    public void setHasBonusFactor3(boolean hasBonusFactor3) {
+        this.hasBonusFactor3 = hasBonusFactor3;
     }
 
     /**
-     * @return the hasBonusFactor
+     * @return the authCode
      */
-    public boolean isHasBonusFactor() {
-        return hasBonusFactor;
+    public String getAuthCode() {
+        return authCode;
     }
 
     /**
-     * @param hasBonusFactor the hasBonusFactor to set
+     * @param authCode the authCode to set
      */
-    public void setHasBonusFactor(boolean hasBonusFactor) {
-        this.hasBonusFactor = hasBonusFactor;
-    }
-
-    /**
-     * @return the authNo1
-     */
-    public int getAuthNo1() {
-        return authNo1;
-    }
-
-    /**
-     * @param authNo1 the authNo1 to set
-     */
-    public void setAuthNo1(int authNo1) {
-        this.authNo1 = authNo1;
+    public void setAuthCode(String authCode) {
+        this.authCode = authCode;
     }
 
     /**
@@ -160,6 +157,7 @@ public class Lottery {
     public void setUrl(String url) {
         this.url = url;
     }
+
     
     
 }

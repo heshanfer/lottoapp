@@ -4,6 +4,8 @@
     Author     : Heshan
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="java.io.InputStreamReader"%>
 <%@page import="java.io.BufferedReader"%>
 <%@page import="java.net.URL"%>
@@ -12,18 +14,14 @@
 <html>
     <h1>Retrieve Results</h1>
     <%
-        URL oracle = new URL("http://www.nlb.lk/show-results.php?lott=5&date=16-11-23");
-        BufferedReader in = new BufferedReader(
-        new InputStreamReader(oracle.openStream()));
-
-        String inputLine;
-        while ((inputLine = in.readLine()) != null){
-        //    System.out.println(inputLine);
-            %>
-                <h1><%=inputLine%></h1>
-            <%
-        }
-        in.close();
-    
+        String r =request.getParameter("uname");
+        System.out.print(r);
+        Date d1 = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("MM/dd/YYYY HH:mm a");
+        String formattedDate = df.format(d1);
+        System.out.print(formattedDate);
+        
+        System.out.print("dddddddddddddd");
+        
     %>
 </html>

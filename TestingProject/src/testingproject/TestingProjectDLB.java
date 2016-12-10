@@ -9,7 +9,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -27,7 +29,8 @@ import org.apache.http.message.BasicNameValuePair;
 
 
 public class TestingProjectDLB {
-
+    static Map<String, String> map = new HashMap<String, String>();
+    
     static String convertStreamToString(java.io.InputStream is) {
         java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
         return s.hasNext() ? s.next() : "";
@@ -55,13 +58,40 @@ public class TestingProjectDLB {
                 dataList.add(data);
             }
             
+           // System.out.println(filteredStr);
+            
+            String patternString3 = "<img src=\"/dlb/images/stories/signs/";
+            Pattern pattern3 = Pattern.compile(patternString3);
+            Matcher matcher3 = pattern3.matcher(filteredStr);
+            
+            while(matcher3.find()){
+                String filteredStr3 = filteredStr.substring(matcher3.end()).trim();
+                String data = filteredStr3.split(".jpg")[0];
+                //System.out.println(map.get(data));
+                dataList.add(map.get(data));
+            }
+            
 
         }
         return dataList;
     }
         
     static List<String> getDLBResults(String lotteryCode,String date) throws UnsupportedEncodingException, IOException{ //  16/11/17
-         HttpClient httpclient = HttpClients.createDefault();
+        map.put("1","Makara");
+        map.put("2","Kumba");
+        map.put("3","meena");
+        map.put("4","mesha");
+        map.put("5","wrushabha");
+        map.put("6","mithuna");
+        map.put("7","kataka");
+        map.put("8","sinha");
+        map.put("9","kanya");
+        map.put("10","thula");
+        map.put("11","dhanu");
+        map.put("12","Thula");
+        
+        
+        HttpClient httpclient = HttpClients.createDefault();
         HttpPost httppost = new HttpPost("http://dlb.today/dlb/index.php?option=com_jumi&amp;fileid=31&amp;Itemid=31");
 
         // Request parameters and other properties.
@@ -98,17 +128,18 @@ public class TestingProjectDLB {
     public static void main(String[] args) {
         try {
            // List<String> dataList =getDLBResults("j","16/11/17");     // jayoda
-           // List<String> dataList =getDLBResults("sf","16/11/19");       // shanida
-           // List<String> dataList =getDLBResults("jj","16/11/16");           // Galaxy Star
+          //  List<String> dataList =getDLBResults("sf","16/11/19");       // shanida
+          //  List<String> dataList =getDLBResults("jj","16/11/16");           // Galaxy Star
           //  List<String> dataList =getDLBResults("nj","16/11/18");               // Niyath Jaya
-         //   List<String> dataList =getDLBResults("df","16/11/18");             // Lagna Vasana ? lagne enne naa
-          //  List<String> dataList =getDLBResults("sb","16/11/17");               // super ball
+           // List<String> dataList =getDLBResults("df","16/11/4");             // Lagna Vasana ? lagne enne naa
+            List<String> dataList =getDLBResults("sb","16/12/10");               // super ball
           //  List<String> dataList =getDLBResults("l","16/11/14");               // sanwardana lakshapathi
-            List<String> dataList =getDLBResults("ks","16/11/18");             // Kotipathi Shanida
+         //   List<String> dataList =getDLBResults("ks","16/11/18");             // Kotipathi Shanida
 
             for (String data : dataList) {
                 System.out.println(data);
-            }} catch (IOException ex) {
+            }
+        } catch (IOException ex) {
             Logger.getLogger(TestingProjectDLB.class.getName()).log(Level.SEVERE, null, ex);
         }
 
