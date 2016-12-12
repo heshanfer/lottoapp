@@ -34,7 +34,7 @@ public class Testing {
     
     public static Date getDate() throws IOException, ParseException {
         Date remoteDate = null; 
-        URL url = new URL("http://sv2.ideamarthosting.dialog.lk:9027/LottoApp/index.html");
+        URL url = new URL("http://sv2.ideamarthosting.dialog.lk:9027/LottoApp/index.jsp");
         URLConnection urlConn = url.openConnection();
         HttpURLConnection conn = (HttpURLConnection) urlConn;
         conn.setConnectTimeout(10000);

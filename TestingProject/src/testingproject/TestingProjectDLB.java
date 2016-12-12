@@ -129,10 +129,10 @@ public class TestingProjectDLB {
         try {
            // List<String> dataList =getDLBResults("j","16/11/17");     // jayoda
           //  List<String> dataList =getDLBResults("sf","16/11/19");       // shanida
-          //  List<String> dataList =getDLBResults("jj","16/11/16");           // Galaxy Star
+            List<String> dataList =getDLBResults("jj","16/12/04");           // Galaxy Star
           //  List<String> dataList =getDLBResults("nj","16/11/18");               // Niyath Jaya
            // List<String> dataList =getDLBResults("df","16/11/4");             // Lagna Vasana ? lagne enne naa
-            List<String> dataList =getDLBResults("sb","16/12/10");               // super ball
+          //  List<String> dataList =getDLBResults("sb","16/12/10");               // super ball
           //  List<String> dataList =getDLBResults("l","16/11/14");               // sanwardana lakshapathi
          //   List<String> dataList =getDLBResults("ks","16/11/18");             // Kotipathi Shanida
 
